@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Standalone Auto One Egypt social-link dashboard prototype">
+    <title>Auto One Egypt | Social links prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Auto One Egypt home">
+        <span class="brand-mark">AO</span>
+        <span><strong>Auto One Egypt</strong><small>Social links prototype</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#home">Homepage preview</a>
+        <a href="#dashboard">Social dashboard</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="notice" role="note">
+        Prototype only: changes are saved in this browser and are not published to autonegypt.com.
+      </div>
+
+      <section id="home" class="page-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PUBLIC PAGE PREVIEW</p>
+            <h1>Connect with Auto One Egypt</h1>
+            <p class="muted">Only links enabled in the dashboard appear here.</p>
+          </div>
+        </div>
+        <div class="preview-card">
+          <h2>Main website</h2>
+          <div id="main-preview" class="social-links"></div>
+        </div>
+        <div class="preview-card">
+          <div class="section-heading compact">
+            <div>
+              <p class="eyebrow">VEHICLE PAGE PREVIEW</p>
+              <h2 id="car-preview-title">Car</h2>
+            </div>
+            <label class="select-label" for="preview-car">Choose car</label>
+            <select id="preview-car"></select>
+          </div>
+          <div id="car-preview" class="social-links"></div>
+        </div>
+      </section>
+
+      <section id="dashboard" class="page-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">LOCAL PROTOTYPE DASHBOARD</p>
+            <h2>Manage social links</h2>
+            <p class="muted">Add a URL, then choose whether that link is visible on the preview.</p>
+          </div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Link scope">
+          <button type="button" class="tab is-active" role="tab" aria-selected="true" data-scope="main">Main website</button>
+          <button type="button" class="tab" role="tab" aria-selected="false" data-scope="car">Per-car links</button>
+        </div>
+        <div id="main-panel" class="editor-panel" role="tabpanel">
+          <div class="panel-heading">
+            <div>
+              <h3>Main website social links</h3>
+              <p class="muted">Manage links shown on the homepage.</p>
+            </div>
+          </div>
+          <div id="main-editor" class="link-editor"></div>
+        </div>
+        <div id="car-panel" class="editor-panel" role="tabpanel" hidden>
+          <div class="panel-heading">
+            <div>
+              <h3>Car social links</h3>
+              <p class="muted">Each car has a separate set of social links.</p>
+            </div>
+            <label class="select-label" for="edit-car">Edit car</label>
+            <select id="edit-car"></select>
+          </div>
+          <div id="car-editor" class="link-editor"></div>
+        </div>
+        <p id="save-status" class="save-status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer>Auto One Egypt · Social links prototype · Not connected to the live website</footer>
+  </body>
+</html>
