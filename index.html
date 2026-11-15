@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Standalone Auto One Egypt social-link dashboard prototype">
-    <title>Auto One Egypt | Social links prototype</title>
+    <meta name="description" content="Standalone Auto One Egypt vehicle and social-links dashboard prototype">
+    <title>Auto One Egypt | Store management prototype</title>
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
   </head>
@@ -12,7 +12,7 @@
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Auto One Egypt home">
         <span class="brand-mark">AO</span>
-        <span><strong>Auto One Egypt</strong><small>Social links prototype</small></span>
+        <span><strong>Auto One Egypt</strong><small>Store management prototype</small></span>
       </a>
       <nav aria-label="Main navigation">
         <a href="#home">Homepage preview</a>
@@ -29,8 +29,8 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">PUBLIC PAGE PREVIEW</p>
-            <h1>Connect with Auto One Egypt</h1>
-            <p class="muted">Only links enabled in the dashboard appear here.</p>
+            <h1>Auto One Egypt showroom</h1>
+            <p class="muted">Preview the homepage links and car pages managed in this prototype.</p>
           </div>
         </div>
         <div class="preview-card">
@@ -46,6 +46,7 @@
             <label class="select-label" for="preview-car">Choose car</label>
             <select id="preview-car"></select>
           </div>
+          <div id="car-slides-preview" class="slides-preview"></div>
           <div id="car-preview" class="social-links"></div>
         </div>
       </section>
@@ -54,13 +55,56 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">LOCAL PROTOTYPE DASHBOARD</p>
-            <h2>Manage social links</h2>
-            <p class="muted">Add a URL, then choose whether that link is visible on the preview.</p>
+            <h2>Manage cars, slides, and social links</h2>
+            <p class="muted">Edits are saved locally in this browser; no live-site data is changed.</p>
           </div>
         </div>
         <div class="tabs" role="tablist" aria-label="Link scope">
+          <button type="button" class="tab" role="tab" aria-selected="false" data-scope="cars">Cars and slides</button>
           <button type="button" class="tab is-active" role="tab" aria-selected="true" data-scope="main">Main website</button>
           <button type="button" class="tab" role="tab" aria-selected="false" data-scope="car">Per-car links</button>
+        </div>
+        <div id="cars-panel" class="editor-panel" role="tabpanel" hidden>
+          <div class="panel-heading">
+            <div>
+              <h3>Store cars</h3>
+              <p class="muted">Add a car and manage its independent image/video slide list.</p>
+            </div>
+            <label class="select-label" for="manage-car">Select car</label>
+            <select id="manage-car"></select>
+          </div>
+          <form id="car-form" class="car-form">
+            <label for="car-name">Car name</label>
+            <div class="form-row">
+              <input id="car-name" type="text" maxlength="100" required>
+              <button type="submit" class="action-button">Save car name</button>
+              <button type="button" id="delete-car" class="danger-button">Delete car</button>
+            </div>
+          </form>
+          <form id="new-car-form" class="add-platform">
+            <strong>Add a new car</strong>
+            <div class="form-row">
+              <input id="new-car-name" type="text" maxlength="100" placeholder="Make and model" required>
+              <button type="submit" class="action-button">Add car</button>
+            </div>
+          </form>
+          <div class="slides-editor">
+            <div class="panel-heading">
+              <div>
+                <h3>Car slides</h3>
+                <p class="muted">First visible slide is used as the lead slide in this preview.</p>
+              </div>
+            </div>
+            <div id="slides-list" class="slides-list"></div>
+            <form id="new-slide-form" class="add-platform">
+              <strong>Add an image or video slide</strong>
+              <div class="form-row">
+                <input id="new-slide-url" type="url" placeholder="https://… (image or video URL)" required>
+                <input id="new-slide-caption" type="text" maxlength="120" placeholder="Optional caption">
+                <button type="submit" class="action-button">Add slide</button>
+              </div>
+            </form>
+          </div>
         </div>
         <div id="main-panel" class="editor-panel" role="tabpanel">
           <div class="panel-heading">
@@ -85,6 +129,6 @@
         <p id="save-status" class="save-status" aria-live="polite"></p>
       </section>
     </main>
-    <footer>Auto One Egypt · Social links prototype · Not connected to the live website</footer>
+    <footer>Auto One Egypt · Store management prototype · Not connected to the live website</footer>
   </body>
 </html>
